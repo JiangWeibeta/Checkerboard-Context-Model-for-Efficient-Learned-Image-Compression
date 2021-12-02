@@ -1,3 +1,7 @@
 # Pytorch-Checkerboard-Context-Model-for-Efficient-Learned-Image-Compression
-Environment: WSL for Ubuntu18.04, Python==3.6, CompresAi == 1.18\\
+
+## Environment: 
+WSL for Ubuntu18.04, Python==3.6, CompresAi == 1.18
+
+## Tips
 More results are comming soon
