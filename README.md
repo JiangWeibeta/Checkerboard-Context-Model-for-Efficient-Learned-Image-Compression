@@ -1,1 +1,1 @@
-# Pytorch-Checkerboard-Context-Model-for-Efficient-Learned-Image-Compression (Unfinished)
+# Pytorch-Checkerboard-Context-Model-for-Efficient-Learned-Image-Compression
