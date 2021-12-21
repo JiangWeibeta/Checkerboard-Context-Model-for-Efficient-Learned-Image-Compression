@@ -118,15 +118,15 @@ class Checkerboard(models.JointAutoregressiveHierarchicalPriors):
                                                                      means=means_nonanchor)
         x_hat = self.g_s(y_anchor_quantized + y_nonanchor_quantized)
 
-        return {"strings": [y_strings_anchor, y_strings_nonanchor, z_strings], "shape": z.size()[-2:]}, hyper_info
+        return {"strings": [y_strings_anchor, y_strings_nonanchor, z_strings], "shape": z.size()[-2:]}
 
-    def decompress(self, strings, shape, hyper_info):
+    def decompress(self, strings, shape):
 
         start_time = time.clock()
 
         z_hat = self.entropy_bottleneck.decompress(strings[2], shape)
 
-        # hyper_info = self.h_s(z_hat)
+        hyper_info = self.h_s(z_hat)
 
         gaussian_params_anchor = self.entropy_parameters(
             torch.cat((hyper_info, self.zeros), dim=1)
