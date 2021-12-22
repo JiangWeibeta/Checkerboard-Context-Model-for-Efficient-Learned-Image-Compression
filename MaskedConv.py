@@ -18,6 +18,7 @@ class MaskedConv2d(nn.Conv2d):
         return super(MaskedConv2d, self).forward(x)
 
 
+   
 if __name__ == "__main__":
     M = 128
     maskedconv = MaskedConv2d(M, M * 2, 5, stride=1, padding=2)
