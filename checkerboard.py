@@ -286,9 +286,6 @@ class Checkerboard(models.JointAutoregressiveHierarchicalPriors):
         return x_hat
 
 
-def decompress_slice_concatenate(self):
-    pass
-
 
 if __name__ == "__main__":
     # y_hat = torch.ones([1, 192, 16, 16])
