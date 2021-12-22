@@ -2,21 +2,21 @@ import numpy as np
 import os
 import torch
 import torchvision.models as models
-from torch.autograd import Variable
 import torch.nn as nn
 import torch.nn.functional as F
 import torch.optim as optim
-from torch.utils.data import DataLoader
 import sys
 import math
 import torch.nn.init as init
 import logging
+import time
+
 from torch.nn.parameter import Parameter
 import compressai.models as models
 from compressai.models.utils import conv, deconv, update_registered_buffers
-import time
-
+from torch.autograd import Variable
 from Gcm import Gcm
+from torch.utils.data import DataLoader
 
 class CheckerboardCheng2020Anchor(models.Cheng2020Anchor):
     def __init__(self, N=192, height=256, width=256, batch_size=8, **kwargs):
