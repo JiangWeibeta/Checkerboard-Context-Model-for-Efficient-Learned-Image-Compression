@@ -6,20 +6,16 @@ import math
 import random
 import shutil
 import sys
-
 import torch
 import torch.nn as nn
 import torch.optim as optim
-
 import checkerboard
 import train_method
 
 from torch.utils.data import DataLoader
 from torchvision import transforms
-
 from compressai.datasets import ImageFolder
 from compressai.zoo import models
-
 from checkerboard import Checkerboard
 
 
