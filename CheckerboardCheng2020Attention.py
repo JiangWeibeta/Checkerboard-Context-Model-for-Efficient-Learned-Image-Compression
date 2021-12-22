@@ -1,20 +1,22 @@
 import numpy as np
 import os
 import torch
+import time
 import torchvision.models as models
-from torch.autograd import Variable
 import torch.nn as nn
 import torch.nn.functional as F
 import torch.optim as optim
-from torch.utils.data import DataLoader
 import sys
 import math
 import torch.nn.init as init
 import logging
-from torch.nn.parameter import Parameter
 import compressai.models as models
+
+from torch.autograd import Variable
+from torch.nn.parameter import Parameter
+from torch.utils.data import DataLoader
 from compressai.models.utils import conv, deconv, update_registered_buffers
-import time
+
 
 from Gcm import Gcm
 
