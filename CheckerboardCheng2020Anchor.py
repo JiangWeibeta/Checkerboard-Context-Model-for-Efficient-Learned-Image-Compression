@@ -113,15 +113,15 @@ class CheckerboardCheng2020Anchor(models.Cheng2020Anchor):
                                                                      means=means_nonanchor)
         x_hat = self.g_s(y_anchor_quantized + y_nonanchor_quantized)
 
-        return {"strings": [y_strings_anchor, y_strings_nonanchor, z_strings], "shape": z.size()[-2:]}, hyper_info
+        return {"strings": [y_strings_anchor, y_strings_nonanchor, z_strings], "shape": z.size()[-2:]}
 
-    def decompress(self, strings, shape, hyper_info):
+    def decompress(self, strings, shape):
 
         start_time = time.clock()
 
         z_hat = self.entropy_bottleneck.decompress(strings[2], shape)
 
-        # hyper_info = self.h_s(z_hat)
+        hyper_info = self.h_s(z_hat)
 
         gaussian_params_anchor = self.entropy_parameters(
             torch.cat((hyper_info, self.zeros), dim=1)
@@ -219,15 +219,15 @@ class CheckerboardCheng2020Anchor(models.Cheng2020Anchor):
         y_d_strings = self.gaussian_conditional.compress(y_d, indexes_d, means_d)
 
         return {"strings": [y_a_strings, y_b_strings, y_c_strings, y_d_strings, z_strings],
-                "shape": z.size()[-2:]}, hyper_info
+                "shape": z.size()[-2:]}
 
-    def decompress_slice_concatenate(self, strings, shape, hyper_info):
+    def decompress_slice_concatenate(self, strings, shape):
         start_time = time.clock()
 
         y_quantized = torch.zeros([self.batch_size, self.M, self.height // 16, self.width // 16]).cuda()
 
         z_hat = self.entropy_bottleneck.decompress(strings[4], shape)
-        # hyper_info = self.h_s(z_hat)
+        hyper_info = self.h_s(z_hat)
         gaussian_params_anchor = self.entropy_parameters(
             torch.cat((hyper_info, self.zeros), dim=1)
         )
