@@ -5,7 +5,7 @@ class MaskedConv2d(nn.Conv2d):
     def __init__(self, *args, **kwargs):
         super(MaskedConv2d, self).__init__(*args, **kwargs)
         self.register_buffer('mask', self.weight.data.clone())
-        _, _, kernel_height, kernel_width = self.weight.size()
+        _, _, kernel_height, kernel_width = self.mask.size()
         self.mask.fill_(0)
         for i in range(kernel_height):
             for j in range(kernel_width):
