@@ -300,7 +300,7 @@ class CheckerboardAutogressivev2(JointAutoregressiveHierarchicalPriors):
         indexes_d = self.gaussian_conditional.build_indexes(scales_d)
         y_d_quantized = self.gaussian_conditional.decompress(strings[3], indexes_d, means=means_d)
 
-        # 加上 non_anchor_quantized
+        # Add non_anchor_quantized
         anchor_quantized[:, :, 0::2, 0::2] = y_a_quantized[:, :, :, :]
         anchor_quantized[:, :, 1::2, 1::2] = y_d_quantized[:, :, :, :]
 
