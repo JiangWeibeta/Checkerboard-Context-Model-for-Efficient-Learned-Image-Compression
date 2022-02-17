@@ -320,7 +320,7 @@ class CheckerboardJointAutogressivev2(JointAutoregressiveHierarchicalPriors):
 
 if __name__ == "__main__":
     x = torch.randn([1, 3, 64, 64])
-    model = Model()
+    model = CheckerboardJointAutogressivev2()
     model.update(force=True)
     out_c = model.compress_slice_concatenate(x)
     out_d = model.decompress_slice_concatenate(out_c["strings"], out_c["shape"])
