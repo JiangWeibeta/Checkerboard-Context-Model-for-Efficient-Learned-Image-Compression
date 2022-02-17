@@ -8,4 +8,7 @@
 ## Environment
 Ubuntu 18.04 LTS for WSL, Python 3.6, torch 1.9.1, CompresAi 1.1.8
 
+## Train
+You can directly use example train code from CompressAi
+
 
