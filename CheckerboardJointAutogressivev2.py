@@ -11,7 +11,7 @@ from compressai.models import JointAutoregressiveHierarchicalPriors
 from layers import CheckerboardContext
 
 
-class Model(JointAutoregressiveHierarchicalPriors):
+class CheckerboardJointAutogressivev2(JointAutoregressiveHierarchicalPriors):
     def __init__(self, N=192, M=192, **kwargs):
         super().__init__(N, M, **kwargs)
 
