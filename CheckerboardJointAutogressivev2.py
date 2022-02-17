@@ -91,7 +91,8 @@ class CheckerboardJointAutogressivev2(JointAutoregressiveHierarchicalPriors):
 
     def compress(self, x):
         """
-        若全零通道 Bpp ≈ 0
+        if y[i, :, j, k] == 0 
+        then bpp = 0
         """
         batch_size, channel, x_height, x_width = x.shape
         y = self.g_a(x)
@@ -136,7 +137,8 @@ class CheckerboardJointAutogressivev2(JointAutoregressiveHierarchicalPriors):
 
     def decompress(self, strings, shape):
         """
-        若全零通道 Bpp ≈ 0
+        if y[i, :, j, k] == 0 
+        then bpp = 0
         """
         start_time = time.process_time()
 
