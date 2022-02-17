@@ -8,7 +8,7 @@ import torch.nn as nn
 import torch.nn.functional as F
 
 from compressai.models import JointAutoregressiveHierarchicalPriors
-from layersv2 import CheckerboardContext
+from layers import CheckerboardContext
 
 
 class CheckerboardAutogressivev2(JointAutoregressiveHierarchicalPriors):
