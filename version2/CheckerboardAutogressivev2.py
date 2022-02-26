@@ -81,7 +81,7 @@ class CheckerboardAutogressivev2(JointAutoregressiveHierarchicalPriors):
         # print(scales_hat - scales_anchor)
         # print(scales_hat - scales_non_anchor)
 
-        _, y_likelihoods = self.gaussian_conditional(y_hat, scales=scales_hat, means=means_hat)
+        _, y_likelihoods = self.gaussian_conditional(y, scales=scales_hat, means=means_hat)
         x_hat = self.g_s(y_hat)
 
         return {
