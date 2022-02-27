@@ -128,7 +128,7 @@ class CheckerboardAutogressivev2(JointAutoregressiveHierarchicalPriors):
         )
         scales_non_anchor, means_non_anchor = gaussian_params_non_anchor.chunk(2, 1)
         indexes_non_anchor = self.gaussian_conditional.build_indexes(scales_non_anchor)
-        non_anchor_strings = self.gaussian_conditional.compress(non_anchor, indexes_non_anchor, means_non_anchor)
+        non_anchor_strings = self.gaussian_conditional.compress(non_anchor, indexes_non_anchor, means=means_non_anchor)
 
         return {
             "strings": [anchor_strings, non_anchor_strings, z_strings],
