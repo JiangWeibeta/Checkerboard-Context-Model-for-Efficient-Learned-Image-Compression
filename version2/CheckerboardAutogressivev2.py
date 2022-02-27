@@ -236,12 +236,12 @@ class CheckerboardAutogressivev2(JointAutoregressiveHierarchicalPriors):
         scales_a = scales_non_anchor[:, :, 0::2, 0::2]
         means_a = means_non_anchor[:, :, 0::2, 0::2]
         indexes_a = self.gaussian_conditional.build_indexes(scales_a)
-        y_a_strings = self.gaussian_conditional.compress(y_a, indexes_a, means_a)
+        y_a_strings = self.gaussian_conditional.compress(y_a, indexes_a, means=means_a)
 
         scales_d = scales_non_anchor[:, :, 1::2, 1::2]
         means_d = means_non_anchor[:, :, 1::2, 1::2]
         indexes_d = self.gaussian_conditional.build_indexes(scales_d)
-        y_d_strings = self.gaussian_conditional.compress(y_d, indexes_d, means_d)
+        y_d_strings = self.gaussian_conditional.compress(y_d, indexes_d, means=means_d)
 
         return {
             "strings": [y_a_strings, y_b_strings, y_c_strings, y_d_strings, z_strings],
