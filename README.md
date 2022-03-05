@@ -12,7 +12,7 @@
 
   Pytorch 1.9.1
 
-  CompresAI 1.1.8
+  CompressAI 1.1.8
 
 ## Train & Test
   You can use example codes from CompressAi to train and test a model
