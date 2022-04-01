@@ -93,6 +93,7 @@ class CheckerboardAutogressivev2(JointAutoregressiveHierarchicalPriors):
         """
         if y[i, :, j, k] == 0 
         then bpp = 0
+        Not recommend
         """
         batch_size, channel, x_height, x_width = x.shape
         y = self.g_a(x)
@@ -139,6 +140,7 @@ class CheckerboardAutogressivev2(JointAutoregressiveHierarchicalPriors):
         """
         if y[i, :, j, k] == 0 
         then bpp = 0
+        Not recommend
         """
         start_time = time.process_time()
 
