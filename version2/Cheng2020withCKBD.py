@@ -208,15 +208,6 @@ class Cheng2020AnchorwithCheckerboard(Cheng2020Anchor):
         nonanchor_hat = self.ckbd_nonanchor_unsequeeze(nonanchor_hat)
         return nonanchor_hat
 
-    def update_temperatures(self, target=None):
-        self.g_a.update_temperature(target)
-
-    def compute_regular_loss(self):
-        return self.g_a.compute_regular_loss()
-
-    def rdo_process(self, x):
-        pass
-
     def load_state_dict(self, state_dict):
         update_registered_buffers(
             self.gaussian_conditional,
