@@ -17,7 +17,7 @@ class Cheng2020AnchorwithCheckerboard(Cheng2020Anchor):
             in_channels = N, out_channels = N * 2, kernel_size=5, stride=1, padding=2
         )
 
-    def forward(self, x, x_ref):
+    def forward(self, x):
         y = self.g_a(x)
         z = self.h_a(y)
         z_hat, z_likelihoods = self.entropy_bottleneck(z)
