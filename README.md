@@ -1,9 +1,7 @@
 # Checkerboard-Context-Model-for-Efficient-Learned-Image-Compression
 
 ## Update
-  Update version 2
-  
-  Recommend using Cheng2020AnchorwithCheckerboard(cheng2020anchor with checkerboard context module) and CheckerboardContext.py in folder version 2
+  Cheng2020AnchorwithCheckerboard(cheng2020anchor with checkerboard context module) and CheckerboardContext.py
   
 ## Environment
   Ubuntu 18.04
