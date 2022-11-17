@@ -12,6 +12,7 @@ from layers import CheckerboardContext
 class Cheng2020AnchorwithCheckerboard(Cheng2020Anchor):
     """
     share entropy_parameters model for anchor and non-anchor
+    Note the receptive field of entropy parameters module is 1x1
     """
     def __init__(self, N=192, **kwargs):
         super().__init__(N, **kwargs)
