@@ -78,6 +78,10 @@ class Cheng2020AnchorwithCheckerboard(Cheng2020Anchor):
         }
 
     def compress(self, x):
+        """
+        Compress by ste(y-mu) + mu, which leads to two-pass encoding.
+        For one-pass encoding, you can use Round(y) and range-coder for AE/AD.
+        """
         torch.backends.cudnn.deterministic = True
         cdf = self.gaussian_conditional.quantized_cdf.tolist()
         cdf_lengths = self.gaussian_conditional.cdf_length.reshape(-1).int().tolist()
