@@ -12,7 +12,7 @@ from layers import CheckerboardContext
 class Cheng2020AnchorwithCheckerboard(Cheng2020Anchor):
     """
     Shared entropy_parameters model for anchor and non-anchor.
-    Using two entropy modules for anchor and non-anchor part may improve the performace.
+    Using two entropy parameter modules for anchor and non-anchor part may improve the performace.
     """
     def __init__(self, N=192, **kwargs):
         super().__init__(N, **kwargs)
