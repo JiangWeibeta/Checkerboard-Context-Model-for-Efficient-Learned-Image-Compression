@@ -11,8 +11,8 @@ from layers import CheckerboardContext
 
 class Cheng2020AnchorwithCheckerboard(Cheng2020Anchor):
     """
-    share entropy_parameters model for anchor and non-anchor
-    Note the receptive field of entropy parameters module is 1x1
+    Shared entropy_parameters model for anchor and non-anchor.
+    Note the receptive field of entropy parameters module is 1x1.
     """
     def __init__(self, N=192, **kwargs):
         super().__init__(N, **kwargs)
@@ -21,6 +21,11 @@ class Cheng2020AnchorwithCheckerboard(Cheng2020Anchor):
         )
 
     def forward(self, x):
+        """
+        Training by adding uniform noise.
+        Due to 1x1 receptive field of entropy parameters module,
+        we can mask the anchor part of ctx_params for one-pass coding.
+        """
         y = self.g_a(x)
         z = self.h_a(y)
         z_hat, z_likelihoods = self.entropy_bottleneck(z)
@@ -43,7 +48,8 @@ class Cheng2020AnchorwithCheckerboard(Cheng2020Anchor):
 
     def validate(self, x):
         """
-        estimate true distortion by mix-quant instead of AUN.
+        Estimate true distortion by ste(y-means) + means instead of adding uniform noise.
+        This function can also be used to train a LIC model.
         """
         y = self.g_a(x)
         z = self.h_a(y)
