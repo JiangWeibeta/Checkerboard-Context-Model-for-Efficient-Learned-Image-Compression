@@ -23,7 +23,7 @@ class Cheng2020AnchorwithCheckerboard(Cheng2020Anchor):
     def forward(self, x):
         """
         Training by adding uniform noise.
-        Due to 1x1 receptive field of entropy parameters module,
+        Due to 1x1 receptive field of entropy parameters module and aun,
         we can mask the anchor part of ctx_params for one-pass coding.
         """
         y = self.g_a(x)
