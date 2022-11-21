@@ -42,6 +42,9 @@ class Cheng2020AnchorwithCheckerboard(Cheng2020Anchor):
         }
 
     def validate(self, x):
+        """
+        estimate true distortion by mix-quant instead of AUN.
+        """
         y = self.g_a(x)
         z = self.h_a(y)
         _, z_likelihoods = self.entropy_bottleneck(z)
