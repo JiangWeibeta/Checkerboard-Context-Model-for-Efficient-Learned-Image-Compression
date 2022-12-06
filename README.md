@@ -13,7 +13,7 @@
   CompressAI 1.1.8
 
 ## Train & Test
-  You can use example codes from CompressAI to train and test a model
+  You can use example code from CompressAI to train and test a model
 
 ## Reference
   > https://interdigitalinc.github.io/CompressAI/
