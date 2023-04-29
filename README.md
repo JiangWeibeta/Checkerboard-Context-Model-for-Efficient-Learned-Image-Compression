@@ -23,7 +23,7 @@
 ## Cite
 ```
 @misc{jiang2022unofficialckbd,
-    author={Wei Jiang},
+    author={Jiang, Wei},
     title={Unofficial Checkerboard Context Model},
     howpublished={\url{https://github.com/JiangWeibeta/Checkerboard-Context-Model-for-Efficient-Learned-Image-Compression}},
     year={2021}
