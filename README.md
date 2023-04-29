@@ -20,4 +20,12 @@
 
   > https://arxiv.org/abs/2103.15306v2
 
-
+## Cite
+```
+@misc{jiang2022unofficialckbd,
+    author={Wei Jiang},
+    title={Unofficial Checkerboard Context Model},
+    howpublished={\url{https://github.com/JiangWeibeta/Checkerboard-Context-Model-for-Efficient-Learned-Image-Compression}},
+    year={2021}
+}
+```
