@@ -29,3 +29,13 @@
     year={2021}
 }
 ```
+
+```
+@inproceedings{he2021checkerboard,
+  title={Checkerboard context model for efficient learned image compression},
+  author={He, Dailan and Zheng, Yaoyan and Sun, Baocheng and Wang, Yan and Qin, Hongwei},
+  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+  pages={14771--14780},
+  year={2021}
+}
+```
